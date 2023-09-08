@@ -33,6 +33,6 @@ setup(
         "botorch>=0.8.5",
         "gpytorch>=1.10",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.6, <=3.10",
     entry_points={"console_scripts": ["baco = baco.run:main"]},
 )
