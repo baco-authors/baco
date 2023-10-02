@@ -1,3 +1,4 @@
+import sys
 import logging
 from types import SimpleNamespace  # to simulate opentuners argparse
 
@@ -9,6 +10,9 @@ from opentuner.search.manipulator import FloatParameter, IntegerParameter, EnumP
 from baco.param.space import Space
 from baco.util.file import initialize_output_data_file
 from baco.util.util import *
+
+import numpy as np
+import torch
 
 log = logging.getLogger(__name__)
 
