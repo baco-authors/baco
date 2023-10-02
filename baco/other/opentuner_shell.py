@@ -1,3 +1,5 @@
+import sys
+
 import logging
 from types import SimpleNamespace  # to simulate opentuners argparse
 
@@ -11,6 +13,9 @@ from baco.util.file import set_output_data_file
 from baco.util.util import *
 
 log = logging.getLogger(__name__)
+
+import numpy as np
+import torch
 
 
 def create_namespace(settings):
