@@ -25,8 +25,7 @@ pip install -e .
 cd ..
 
 sudo apt-get install autoconf automake libtool libgsl-dev
-
-git clone git@github.com:argonne-lcf/CCS.git
+git clone https://github.com/argonne-lcf/CCS.git
 cd CCS
 ./autogen.sh
 mkdir build
