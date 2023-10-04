@@ -154,7 +154,7 @@ class YtOptRunner:
                 feasible_values = filter_conditional_values(parameter, parameter.constraints, {})
                 cs.add_parameter(CCS.CategoricalParameter(
                     name=parameter.name,
-                    values=[v.item() for v in feasible_values],,
+                    values=[v.item() for v in feasible_values],
                     default_index=(list(feasible_values).index(parameter.default) if parameter.default is not None else None)
                 ))
 
