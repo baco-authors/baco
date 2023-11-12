@@ -2,7 +2,7 @@
 
 The Bayesian Compiler Optimization framework (BaCO) is a flexible out-of-the-box compiler optimizer. The aim is to develop a flexible tool that could be applied in a wide range of compiler optimization and hardware design settings.
 
-This repo is connected to the publication https://arxiv.org/abs/2212.11142 and aims to facilitating reconstructing those results. It comes in two versions, one older that was used for the experiments in the paper and one, which is functionally equivalent but where the code has been cleaned up further. The older version is located in the branch Original.
+This repo is connected to the publication https://arxiv.org/abs/2212.11142 and aims to facilitating reconstructing those results. It comes in two versions, one older that was used for the experiments in the paper and one, which is functionally equivalent but where the code has been cleaned up further. The older version is located in the branch Original. In the repository https://github.com/baco-authors/baco-artifact, we further provide two docker containers to set up the TACO and RISE/ELEVATE experiments.
 
 If you want to use the optimizer for your own application, we would recommend using the maintained version of the codebase which will instead be kept under the name Hypermapper (https://github.com/luinardi/hypermapper, branch:Hypermapper-v3), which however won't include the compiler baselines.
 
@@ -66,3 +66,11 @@ x1,x2,value,Valid
 ```
 
 This protocol continues for the number of iterations specified by the client in the scenario file and after all iterations are done, Hypermapper will save all explored points to a csv file and end its execution.
+
+
+## File structure
+BaCO runs from the run.py python file in the baco subfolder. It uses the run-time provided scenario file to decide the problem charactersitics and run settings validated against the schema _schema.json_. The repo is further divided into three main parts, organized in subfolders, _bo_, _param_, and _utility_. _bo_ contains most of the parts related to the BO loop, the models, the execution flow,  the optimization etc. _param_ contains the methods and classes related to the problem and the search space. And _util_ are smaller global utility functions. The subfolder _other_ contains baseline methods not strictly related to BaCO and _plot_ some plotting utility scripts. 
+
+
+
+
