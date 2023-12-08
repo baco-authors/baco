@@ -489,10 +489,11 @@ class CategoricalParameter(Parameter):
             dependencies = []
         if constraints is None:
             constraints = []
-        Parameter.__init__(self, name, values.index(default), constraints, dependencies)
+
+        Parameter.__init__(self, name, (values.index(default) if not default is None else None), constraints, dependencies)
         self.values = torch.arange(len(values))
         self.string_values = values
-        self.val_indices = {i: i for i in self.values}
+        self.val_indices = {i.item(): i.item() for i in self.values}
 
         if isinstance(probability_distribution, str):
             self.distribution_name = probability_distribution

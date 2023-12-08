@@ -263,7 +263,7 @@ class Space:
         possible_child_values = constraints.filter_conditional_values(
             child_parameter,
             child_parameter.constraints,
-            {p.name: v for p, v in zip(tree_ordered_parameters, self.convert(configuration[:, :level + 1], "internal", "original", parameters=tree_ordered_parameters)[0]) if not np.isnan(v)}
+            {p.name: v for p, v in zip(tree_ordered_parameters, self.convert(configuration[:, :level + 1], "internal", "original", parameters=tree_ordered_parameters)[0]) if isinstance(v, str) or not np.isnan(v)}
         )
         if len(possible_child_values) > 0:
             if level == len(tree_order) - 2:
